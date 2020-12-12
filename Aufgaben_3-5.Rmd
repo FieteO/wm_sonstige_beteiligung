@@ -34,9 +34,37 @@ Mit:
 - relative empirische Verteilungsfunktion (`cumperc`)  
 
 ### b) die Fünf-Punkte-Zusammenfassung
+```{r quantiles}
+quantile(daten2$note_p)
+```
+
 ### c) den Mittelwert, die Varianz und Standardabweichung
+Der Mittelwert:  
+```{r}
+mean(daten2$note_p)
+```
+Die Varianz:  
+```{r}
+var(daten2$note_p)
+```
+Die Standardabweichung:  
+```{r}
+sd(daten2$note_p)
+```
+
+
+
 ### d) das Histogramm
+```{r}
+hist(x = daten2$note_p, main = "Histogramm der Note Physik")
+?hist
+```
+
 ### e) den Boxplot
+```{r}
+boxplot(daten2$note_p)
+```
+
 #### i. Wieviele Ausreißer zeigt der Boxplot an?
 #### ii. Wieviele Extremwerte zeigt der Boxplot an?
 
