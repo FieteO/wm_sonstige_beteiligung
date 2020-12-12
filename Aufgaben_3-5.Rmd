@@ -14,6 +14,13 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+Einlesen des Datensatzes:
+```{r load-data}
+load(file = "datensonstbet2.RData")
+head(daten2)
+```
+
+
 ## Aufgabe 3 - Berechnen Sie bitte für die Variable `note_p`
 
 ### a) die Häufigkeitstabelle mit den absoluten Häufigkeiten, den relativen Häufigkeiten und der empirischen Verteilungsfunktion anhand der absoluten und relativen Häufigkeiten
