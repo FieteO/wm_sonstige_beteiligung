@@ -1,0 +1,1 @@
+Dies ist ein RMarkdown Projekt. Für Informationen zur Syntax, siehe zum Beispiel hier: [RMarkdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)

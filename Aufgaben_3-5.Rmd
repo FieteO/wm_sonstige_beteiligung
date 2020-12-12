@@ -1,0 +1,61 @@
+---
+title: "Gruppenarbeit 7 zur sonstigen Beteiligung"
+author: "Fiete Ostkamp, Kai Meder, Jannik Winther, Niklas Westphal"
+# author:
+#   - "Fiete Ostkamp"
+#   - "Kai Meder"
+#   - "Jannik Winther"
+#   - "Niklas Westphal"
+date: "`r format(Sys.time(), '%d/%m/%Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Aufgabe 3 - Berechnen Sie bitte für die Variable `note_p`
+
+### a) die Häufigkeitstabelle mit den absoluten Häufigkeiten, den relativen Häufigkeiten und der empirischen Verteilungsfunktion anhand der absoluten und relativen Häufigkeiten
+### b) die Fünf-Punkte-Zusammenfassung
+### c) den Mittelwert, die Varianz und Standardabweichung
+### d) das Histogramm
+### e) den Boxplot
+#### i. Wieviele Ausreißer zeigt der Boxplot an?
+#### ii. Wieviele Extremwerte zeigt der Boxplot an?
+
+## Aufgabe 4 - Berechnen Sie
+### a) den Korrelationskoeffizienten zwischen den Variablen `note_p` und `sk_p`
+### b) Wie ist das Ergebnis in inhaltlicher Hinsicht anhand von zwei, drei Sätzen zu interpretieren?
+### c) Stellen Sie zu der inhaltlichen Hypothese, dass eine positive Korrelation zwischen diesen beiden Variablen besteht, die statistische Null- und Alternativhypothese auf.
+### d) Überprüfen Sie diese statistische Nullhypothese anhand eines Signifikanzniveaus von `α=.05`.
+### e) Wie groß ist der p-Wert? 
+### f) Muss die Nullhypothese bei einem Signifikanzniveau von 5% verworfen werden? Begründen Sie bitte ihre Antwort.
+### g) Geben Sie bitte das 95%ige Konfidenzintervall an.
+### h) Kann man anhand dieses Konfidenzintervalls entscheiden, ob die Nullhypothese bei einem Signifikanzniveaus von `α=.05` zu verwerfen ist? Begründen Sie bitte Ihre Meinung.
+
+## Aufgabe 5 - Überprüfen Sie anhand eines geeigneten Tests, ob sich die Erwartungswerte der Variable `note_p` für Schülerinnen und Schüler signifikant unterscheiden.
+### a) Stellen Sie zu diesem Testproblem die statistische Null- und Alternativhypothese auf.
+### b) Wie groß ist der p-Wert?
+### c) Muss die Nullhypothese bei einem Signifikanzniveau von 5% verworfen werden? Begründen Sie bitte ihre Antwort.
+### d) Interpretieren Sie das Ergebnis dieses Tests aus inhaltlicher Sicht.
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
