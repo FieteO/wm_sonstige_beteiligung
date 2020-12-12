@@ -21,6 +21,4 @@ jobs:
       #- run: echo "foo" > input.txt  # create an example file
       - uses: docker://pandoc/core:2.9
         with:
-          args: |>
-            --standalone
-            Aufgaben_3-5.Rmd
+          args: Aufgaben_3-5.Rmd
