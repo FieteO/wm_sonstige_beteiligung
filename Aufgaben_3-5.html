@@ -439,6 +439,22 @@ head(daten2)</code></pre>
 <h2>Aufgabe 3 - Berechnen Sie bitte für die Variable <code>note_p</code></h2>
 <div id="a-die-häufigkeitstabelle-mit-den-absoluten-häufigkeiten-den-relativen-häufigkeiten-und-der-empirischen-verteilungsfunktion-anhand-der-absoluten-und-relativen-häufigkeiten" class="section level3">
 <h3>a) die Häufigkeitstabelle mit den absoluten Häufigkeiten, den relativen Häufigkeiten und der empirischen Verteilungsfunktion anhand der absoluten und relativen Häufigkeiten</h3>
+<pre class="r"><code>library(DescTools)
+Freq(daten2$note_p)</code></pre>
+<pre><code>##      level  freq   perc  cumfreq  cumperc
+## 1  [1,1.5]     2   2.0%        2     2.0%
+## 2  (1.5,2]    26  26.0%       28    28.0%
+## 3  (2,2.5]     0   0.0%       28    28.0%
+## 4  (2.5,3]    47  47.0%       75    75.0%
+## 5  (3,3.5]     0   0.0%       75    75.0%
+## 6  (3.5,4]    21  21.0%       96    96.0%
+## 7  (4,4.5]     0   0.0%       96    96.0%
+## 8  (4.5,5]     4   4.0%      100   100.0%</code></pre>
+<p>Mit:<br />
+- absolute Häufigkeiten (<code>freq</code>)<br />
+- relative Häufigkeiten (<code>perc</code>)<br />
+- absolute empirische Verteilungsfunktion (<code>cumfreq</code>)<br />
+- relative empirische Verteilungsfunktion (<code>cumperc</code>)</p>
 </div>
 <div id="b-die-fünf-punkte-zusammenfassung" class="section level3">
 <h3>b) die Fünf-Punkte-Zusammenfassung</h3>
