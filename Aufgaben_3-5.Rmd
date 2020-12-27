@@ -12,6 +12,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(DescTools)
 ```
 Einlesen des Datensatzes:
 ```{r load-data}
@@ -22,23 +23,18 @@ head(daten2)
 
 ## Aufgabe 3 - Berechnen Sie bitte für die Variable `note_p`
 
-### a) die Häufigkeitstabelle mit den absoluten Häufigkeiten, den relativen Häufigkeiten und der empirischen Verteilungsfunktion anhand der absoluten und relativen Häufigkeiten
+#### a) die Häufigkeitstabelle mit den absoluten Häufigkeiten (`freq`), den relativen Häufigkeiten (`perc`) und der empirischen Verteilungsfunktion (`cumfreq`) anhand der absoluten und relativen Häufigkeiten (`cumperc`)
 ```{r haeufigkeitstabelle}
-library(DescTools)
+
 Freq(daten2$note_p)
 ```
-Mit:  
-- absolute Häufigkeiten (`freq`)  
-- relative Häufigkeiten (`perc`)  
-- absolute empirische Verteilungsfunktion (`cumfreq`)  
-- relative empirische Verteilungsfunktion (`cumperc`)  
 
-### b) die Fünf-Punkte-Zusammenfassung
+#### b) die Fünf-Punkte-Zusammenfassung
 ```{r quantiles}
 quantile(daten2$note_p)
 ```
 
-### c) den Mittelwert, die Varianz und Standardabweichung
+#### c) den Mittelwert, die Varianz und Standardabweichung
 Der Mittelwert:  
 ```{r}
 mean(daten2$note_p)
@@ -54,25 +50,37 @@ sd(daten2$note_p)
 
 
 
-### d) das Histogramm
+#### d) das Histogramm
 ```{r}
 hist(x = daten2$note_p, main = "Histogramm der Note Physik")
-?hist
 ```
 
-### e) den Boxplot
+#### e) den Boxplot
 ```{r}
 boxplot(daten2$note_p)
 ```
 
 #### i. Wieviele Ausreißer zeigt der Boxplot an?
+Der Plot zeigt keine Ausreißer an.
+
 #### ii. Wieviele Extremwerte zeigt der Boxplot an?
+Der Plot zeigt keine Extremwerte an.
 
 ## Aufgabe 4 - Berechnen Sie
 ### a) den Korrelationskoeffizienten zwischen den Variablen `note_p` und `sk_p`
+```{r}
+cor(daten2$note_p,daten2$sk_p)
+```
+
 ### b) Wie ist das Ergebnis in inhaltlicher Hinsicht anhand von zwei, drei Sätzen zu interpretieren?
+Es besteht eine moderate negative Korrelation zwischen den Variablen `note_p` und `sk_p`. Das heißt in der Regel korelliert die eigene Einschätzung der Schüler zu ihren Leistungen auch mit der tatsächlichen Note im Fach Physik.
+
 ### c) Stellen Sie zu der inhaltlichen Hypothese, dass eine positive Korrelation zwischen diesen beiden Variablen besteht, die statistische Null- und Alternativhypothese auf.
+$h_{0}: \hat{p} = 0$ - die Merkmale sind unkorreliert  
+$h_{1}: \hat{p} > 0$ - es besteht eine positive Korrelation
+
 ### d) Überprüfen Sie diese statistische Nullhypothese anhand eines Signifikanzniveaus von `α=.05`.
+
 ### e) Wie groß ist der p-Wert? 
 ### f) Muss die Nullhypothese bei einem Signifikanzniveau von 5% verworfen werden? Begründen Sie bitte ihre Antwort.
 ### g) Geben Sie bitte das 95%ige Konfidenzintervall an.
