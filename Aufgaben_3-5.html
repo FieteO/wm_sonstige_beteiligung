@@ -374,7 +374,7 @@ summary {
 
 <h1 class="title toc-ignore">Gruppenarbeit 7 zur sonstigen Beteiligung</h1>
 <h4 class="author">Fiete Ostkamp, Kai Meder, Jannik Winther, Niklas Westphal</h4>
-<h4 class="date">27/12/2020</h4>
+<h4 class="date">28/12/2020</h4>
 
 </div>
 
@@ -461,14 +461,26 @@ head(daten2)</code></pre>
 </div>
 <div id="c-stellen-sie-zu-der-inhaltlichen-hypothese-dass-eine-positive-korrelation-zwischen-diesen-beiden-variablen-besteht-die-statistische-null--und-alternativhypothese-auf." class="section level3">
 <h3>c) Stellen Sie zu der inhaltlichen Hypothese, dass eine positive Korrelation zwischen diesen beiden Variablen besteht, die statistische Null- und Alternativhypothese auf.</h3>
-<p><span class="math inline">\(h_{0}: \hat{p} = 0\)</span> - die Merkmale sind unkorreliert<br />
-<span class="math inline">\(h_{1}: \hat{p} &gt; 0\)</span> - es besteht eine positive Korrelation</p>
+<p><span class="math inline">\(h_{0}:\rho_{note\_p,sk\_p} = 0, h_{1}: \rho_{note\_p,sk\_p} &gt; 0\)</span></p>
 </div>
 <div id="d-überprüfen-sie-diese-statistische-nullhypothese-anhand-eines-signifikanzniveaus-von-α.05." class="section level3">
 <h3>d) Überprüfen Sie diese statistische Nullhypothese anhand eines Signifikanzniveaus von <code>α=.05</code>.</h3>
+<pre class="r"><code>cor.test(x = daten2$note_p,y = daten2$sk_p, alternative = &quot;greater&quot;, method = &quot;pearson&quot;, conf.level = 0.95)</code></pre>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  daten2$note_p and daten2$sk_p
+## t = -6.4283, df = 98, p-value = 1
+## alternative hypothesis: true correlation is greater than 0
+## 95 percent confidence interval:
+##  -0.6513819  1.0000000
+## sample estimates:
+##        cor 
+## -0.5446097</code></pre>
 </div>
 <div id="e-wie-groß-ist-der-p-wert" class="section level3">
 <h3>e) Wie groß ist der p-Wert?</h3>
+<p>Der p-Wert beträgt 1.</p>
 </div>
 <div id="f-muss-die-nullhypothese-bei-einem-signifikanzniveau-von-5-verworfen-werden-begründen-sie-bitte-ihre-antwort." class="section level3">
 <h3>f) Muss die Nullhypothese bei einem Signifikanzniveau von 5% verworfen werden? Begründen Sie bitte ihre Antwort.</h3>

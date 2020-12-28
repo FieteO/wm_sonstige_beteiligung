@@ -76,12 +76,17 @@ cor(daten2$note_p,daten2$sk_p)
 Es besteht eine moderate negative Korrelation zwischen den Variablen `note_p` und `sk_p`. Das heißt in der Regel korelliert die eigene Einschätzung der Schüler zu ihren Leistungen auch mit der tatsächlichen Note im Fach Physik.
 
 ### c) Stellen Sie zu der inhaltlichen Hypothese, dass eine positive Korrelation zwischen diesen beiden Variablen besteht, die statistische Null- und Alternativhypothese auf.
-$h_{0}: \hat{p} = 0$ - die Merkmale sind unkorreliert  
-$h_{1}: \hat{p} > 0$ - es besteht eine positive Korrelation
+$h_{0}:\rho_{note\_p,sk\_p} = 0, h_{1}: \rho_{note\_p,sk\_p} > 0$
 
 ### d) Überprüfen Sie diese statistische Nullhypothese anhand eines Signifikanzniveaus von `α=.05`.
+```{r}
+cor.test(x = daten2$note_p,y = daten2$sk_p, alternative = "greater", method = "pearson", conf.level = 0.95)
+```
+
 
 ### e) Wie groß ist der p-Wert? 
+Der p-Wert beträgt 1.  
+
 ### f) Muss die Nullhypothese bei einem Signifikanzniveau von 5% verworfen werden? Begründen Sie bitte ihre Antwort.
 ### g) Geben Sie bitte das 95%ige Konfidenzintervall an.
 ### h) Kann man anhand dieses Konfidenzintervalls entscheiden, ob die Nullhypothese bei einem Signifikanzniveaus von `α=.05` zu verwerfen ist? Begründen Sie bitte Ihre Meinung.
