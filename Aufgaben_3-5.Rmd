@@ -80,17 +80,26 @@ $h_{0}:\rho_{note\_p,sk\_p} = 0, h_{1}: \rho_{note\_p,sk\_p} > 0$
 
 ### d) Überprüfen Sie diese statistische Nullhypothese anhand eines Signifikanzniveaus von `α=.05`.
 ```{r}
-cor.test(x = daten2$note_p,y = daten2$sk_p, alternative = "greater", method = "pearson", conf.level = 0.95)
+cortest <- cor.test(x = daten2$note_p,y = daten2$sk_p, alternative = "greater", method = "pearson", conf.level = 0.95)
+cortest
 ```
 
 ### e) Wie groß ist der p-Wert? 
 Der p-Wert beträgt 1.  
+```{r}
+cortest$p.value
+```
+
 
 ### f) Muss die Nullhypothese bei einem Signifikanzniveau von 5% verworfen werden? Begründen Sie bitte ihre Antwort.
-Da der p-Wert $p= 1$ größer als das Signifikanzniveau $\alpha = .05$ ist, kann die Nullhypothese nicht verworfen werden.
+Da der p-Wert $p= 1$ größer als das Signifikanzniveau $\alpha = .05$ ist, ist die Korrelation von -0,545 nicht signifikant. Daher kann die Nullhypothese nicht verworfen werden.
 
 ### g) Geben Sie bitte das 95%ige Konfidenzintervall an.
 Das 95%ige Konfidenzintervall liegt zwischen -0.6513819 und 1.0000000.
+```{r}
+cortest$conf.int
+```
+
 
 ### h) Kann man anhand dieses Konfidenzintervalls entscheiden, ob die Nullhypothese bei einem Signifikanzniveaus von `α=.05` zu verwerfen ist? Begründen Sie bitte Ihre Meinung.
 
