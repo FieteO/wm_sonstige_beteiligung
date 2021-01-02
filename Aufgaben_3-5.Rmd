@@ -73,10 +73,11 @@ cor(daten2$note_p,daten2$sk_p)
 ```
 
 ### b) Wie ist das Ergebnis in inhaltlicher Hinsicht anhand von zwei, drei Sätzen zu interpretieren?
-Es besteht eine moderate negative Korrelation zwischen den Variablen `note_p` und `sk_p`. Das heißt in der Regel korelliert die eigene Einschätzung der Schüler zu ihren Leistungen auch mit der tatsächlichen Note im Fach Physik.
+Es besteht eine moderate negative Korrelation zwischen den Variablen `note_p` und `sk_p`. Das heißt in der Regel korrelliert die eigene Einschätzung der Schüler zu ihren Leistungen auch mit der tatsächlichen Note im Fach Physik. Eine höhere Selbsteinschätzung führt zu einer numerisch niedrigeren Note.
 
 ### c) Stellen Sie zu der inhaltlichen Hypothese, dass eine positive Korrelation zwischen diesen beiden Variablen besteht, die statistische Null- und Alternativhypothese auf.
-$h_{0}:\rho_{note\_p,sk\_p} = 0, h_{1}: \rho_{note\_p,sk\_p} > 0$
+$h_{0}:\rho_{note\_p,sk\_p} = 0$,  
+$h_{1}: \rho_{note\_p,sk\_p} > 0$
 
 ### d) Überprüfen Sie diese statistische Nullhypothese anhand eines Signifikanzniveaus von `α=.05`.
 ```{r}
@@ -92,7 +93,7 @@ cortest$p.value
 
 
 ### f) Muss die Nullhypothese bei einem Signifikanzniveau von 5% verworfen werden? Begründen Sie bitte ihre Antwort.
-Da der p-Wert $p= 1$ größer als das Signifikanzniveau $\alpha = .05$ ist, ist die Korrelation von -0,545 nicht signifikant. Daher kann die Nullhypothese nicht verworfen werden.
+Da der p-Wert $p= 1$ größer als das Signifikanzniveau $\alpha = .05$ ist, ist die Korrelation von -0,545 nicht signifikant. Daher kann die Nullhypothese nicht verworfen werden. Bei einem Korrelationstest auf eine negative Korrelation (`cor.test(daten2$note_p,daten2$sk_p, alternative = "less")`), würde mit einem p-Wert von 2.351e-09 ($<\alpha = .05$) eine signifikante Korrelation vorliegen.
 
 ### g) Geben Sie bitte das 95%ige Konfidenzintervall an.
 Das 95%ige Konfidenzintervall liegt zwischen -0.6513819 und 1.0000000.
@@ -103,11 +104,33 @@ cortest$conf.int
 
 ### h) Kann man anhand dieses Konfidenzintervalls entscheiden, ob die Nullhypothese bei einem Signifikanzniveaus von `α=.05` zu verwerfen ist? Begründen Sie bitte Ihre Meinung.
 
-
+Das Konfidenzintervall gibt den Bereich an, in dem, unter Annahme von $H_{0}$, in 95% der Stichproben die Messgröße (hier die Korrelation) enthalten ist. Entsprechend kann man einen Annahme- und Ablehnungsbereich für $H_{0}$ festlegen:  
+Annahmebereich: $-0.651 \leqslant \rho \leqslant 1.000$
+Ablehnungsbereich: $\rho < -0.651 (, \rho > 1) $
 
 ## Aufgabe 5 - Überprüfen Sie anhand eines geeigneten Tests, ob sich die Erwartungswerte der Variable `note_p` für Schülerinnen und Schüler signifikant unterscheiden.
 ### a) Stellen Sie zu diesem Testproblem die statistische Null- und Alternativhypothese auf.
+$H_{0}: Var(note\_p_{m}) = Var(note\_p_{w})$,  
+$H_{1}: Var(note\_p_{m}) \neq Var(note\_p_{w})$
+
 ### b) Wie groß ist der p-Wert?
+Kann von gleicher Varianz der `note_p` in beiden Samples ausgegangen werden?
+```{r}
+LeveneTest(note_p ~ geschl, data = daten2)
+```
+Ja, da $Pr(>F) = 0.72 > \alpha$, mit $\alpha = 0.05$, wird $H_{0}$ nicht verworfen und es kann von einer gleichen Varianz der beiden Samples (m/w) ausgegangen werden.
+
+t-Test für homogene Varianzen:  
+```{r}
+t.test(note_p ~ geschl, alternative = "two.sided", conf.level = 0.95, var.equal = TRUE, data = daten2)
+```
+Der p-Wert beträgt 0.1945.
+
 ### c) Muss die Nullhypothese bei einem Signifikanzniveau von 5% verworfen werden? Begründen Sie bitte ihre Antwort.
+Da der p-Wert 0.1945 größer als das Signifikanzniveau 0.05 liegt, kann die Nullhypothese nicht verworfen werden. 
+
 ### d) Interpretieren Sie das Ergebnis dieses Tests aus inhaltlicher Sicht.
+Man kann also davon ausgehen, dass sich die Erwartungswerte der `note_p` sich nicht signifikant unterscheiden je Geschlecht. Im Fach Physik sind Jungen und Mädchen also ungefähr gleich gut.
+
+
 
