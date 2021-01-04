@@ -1,13 +1,12 @@
 ---
 title: "Gruppenarbeit 7 zur sonstigen Beteiligung"
 author: "Fiete Ostkamp, Kai Meder, Jannik Winther, Niklas Westphal"
-# author:
-#   - "Fiete Ostkamp"
-#   - "Kai Meder"
-#   - "Jannik Winther"
-#   - "Niklas Westphal"
 date: "`r format(Sys.time(), '%d/%m/%Y')`"
-output: html_document
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 2
 ---
 
 ```{r setup, include=FALSE}
@@ -22,23 +21,40 @@ head(daten2)
 ## Aufgabe 1
 Die folgenden Berechnungen sollen nun für die ersten fünf Werte der Variable `note_p`, d.h der Werte für die ersten 5 Personen, per Hand vorgenommen werden. Beschreiben Sie dabei auch den Rechenweg. Berechnen Sie für diese Variable
 
-#### Den Mittelwert, die Varianz und die Standardabweichung
-$\overline{x} = {\frac {1}{n}}\sum _{i=1}^{n}x_{i}$, mit $n = 5$ und $X = {3,4,5,4,3}$
-$\overline{x} = \frac{(3+4+5+4+3)}{5} = \frac{19}{5} = 3.8 $
+#### a) Den Mittelwert, die Varianz und die Standardabweichung
+mit $n = 5, X = \{3,4,5,4,3\}$:  
 
-$s^2 = {\frac {1}{n-1}}\sum_{i=1}^{n}(x_{i}-\overline{x})^2$, mit $n = 5, X = {3,4,5,4,3}$ und $\overline{x} = 3.8$
-$s^2 = \frac{(3-3.8)^2+(4-3.8)^2+(5-3.8)^2+(4-3.8)^2+(3-3.8)^2}{4}$ = $\frac{2.8}{4} = 0.7$
-$s = \sqrt{s^2} = \sqrt{0.7} = 0.8366$
-#### Die z-standartisierten Werte (für die ersten 5 Personen)
+$\begin{align}
+\overline{x} &= {\frac {1}{n}}\sum _{i=1}^{n}x_{i} \\
+\overline{x} &= \frac{(3+4+5+4+3)}{5} \\
+&= \frac{19}{5} \\
+&= 3.8
+\end{align}$  
+
+mit $n = 5, X = {3,4,5,4,3}$ und $\overline{x} = 3.8$  
+$\begin{align}
+s^2 &= {\frac {1}{n-1}}\sum_{i=1}^{n}(x_{i}-\overline{x})^2 \\
+s^2 &= \frac{(3-3.8)^2+(4-3.8)^2+(5-3.8)^2+(4-3.8)^2+(3-3.8)^2}{4} \\
+&= \frac{2.8}{4} \\
+&= 0.7 \\
+s &= \sqrt{s^2} \\
+&= \sqrt{0.7} \\
+&= 0.8366
+\end{align}$  
+
+#### b) Die z-standartisierten Werte (für die ersten 5 Personen)
 $Z = \frac{\overline{Y} - \mu}{\frac{\sigma}{\sqrt{n}}}$, mit $\overline{Y} = \overline{x}$ und $\sigma = s$
 $z_i = \frac{y_i-\overline{y}}{s}$, mit $\overline{y} = 3.8$ und $s = 0.7$
 $z_1 = \frac{3 - 3.8}{0.8366} = -0.956, z_2 = \frac{4 - 3.8}{0.8366} = 0.239, z_3 = \frac{5 - 3.8}{0.8366} = 1.434, z_4 = \frac{4 - 3.8}{0.8366} = 0.239, z_5 = \frac{3 - 3.8}{0.8366} = -0.956$
 
-#### Erklären Sie bitte kurz den wesentlichen Unterschied zwischen den z-standardisierten Wert und dem ursprünglichen Wert (Note) für die erste Person.
+#### c) Erklären Sie bitte kurz den wesentlichen Unterschied zwischen den z-standardisierten Wert und dem ursprünglichen Wert (Note) für die erste Person.
 
 ## Aufgabe 2
+#### a) Kovarianz zwischen den Variablen `note_p` und `sk_p`
+#### b) Korrelation zwischen den Variablen `note_p` und `sk_p`
 
-## Aufgabe 3 - Berechnen Sie bitte für die Variable `note_p`
+## Aufgabe 3
+Berechnen Sie bitte für die Variable `note_p`  
 
 #### a) die Häufigkeitstabelle mit den absoluten Häufigkeiten (`freq`), den relativen Häufigkeiten (`perc`) und der empirischen Verteilungsfunktion (`cumfreq`) anhand der absoluten und relativen Häufigkeiten (`cumperc`)
 ```{r haeufigkeitstabelle}
@@ -83,7 +99,7 @@ Der Plot zeigt keine Ausreißer an.
 #### ii. Wieviele Extremwerte zeigt der Boxplot an?
 Der Plot zeigt keine Extremwerte an.
 
-## Aufgabe 4 - Berechnen Sie
+## Aufgabe 4
 ### a) den Korrelationskoeffizienten zwischen den Variablen `note_p` und `sk_p`
 ```{r}
 cor(daten2$note_p,daten2$sk_p)
@@ -93,7 +109,7 @@ cor(daten2$note_p,daten2$sk_p)
 Es besteht eine moderate negative Korrelation zwischen den Variablen `note_p` und `sk_p`. Das heißt in der Regel korrelliert die eigene Einschätzung der Schüler zu ihren Leistungen auch mit der tatsächlichen Note im Fach Physik. Eine höhere Selbsteinschätzung führt zu einer numerisch niedrigeren Note.
 
 ### c) Stellen Sie zu der inhaltlichen Hypothese, dass eine positive Korrelation zwischen diesen beiden Variablen besteht, die statistische Null- und Alternativhypothese auf.
-$h_{0}:\rho_{note\_p,sk\_p} = 0$,  
+$h_{0}:\rho_{note\_p,sk\_p} = 0$  
 $h_{1}: \rho_{note\_p,sk\_p} > 0$
 
 ### d) Überprüfen Sie diese statistische Nullhypothese anhand eines Signifikanzniveaus von `α=.05`.
@@ -122,20 +138,26 @@ cortest$conf.int
 ### h) Kann man anhand dieses Konfidenzintervalls entscheiden, ob die Nullhypothese bei einem Signifikanzniveaus von `α=.05` zu verwerfen ist? Begründen Sie bitte Ihre Meinung.
 
 Das Konfidenzintervall gibt den Bereich an, in dem, unter Annahme von $H_{0}$, in 95% der Stichproben die Messgröße (hier die Korrelation) enthalten ist. Entsprechend kann man einen Annahme- und Ablehnungsbereich für $H_{0}$ festlegen:  
-Annahmebereich: $-0.651 \leqslant \rho \leqslant 1.000$
-Ablehnungsbereich: $\rho < -0.651 (, \rho > 1) $
+Annahmebereich: $-0.651 \leqslant \rho \leqslant 1.000$  
+Ablehnungsbereich: $\rho < -0.651, (\rho > 1)$, wobei $p > 1$ nicht möglich ist.
 
-## Aufgabe 5 - Überprüfen Sie anhand eines geeigneten Tests, ob sich die Erwartungswerte der Variable `note_p` für Schülerinnen und Schüler signifikant unterscheiden.
+## Aufgabe 5
+Überprüfen Sie anhand eines geeigneten Tests, ob sich die Erwartungswerte der Variable `note_p` für Schülerinnen und Schüler signifikant unterscheiden.  
+
 ### a) Stellen Sie zu diesem Testproblem die statistische Null- und Alternativhypothese auf.
-$H_{0}: Var(note\_p_{m}) = Var(note\_p_{w})$,  
-$H_{1}: Var(note\_p_{m}) \neq Var(note\_p_{w})$
+$H_{0}: \mu_{note\_p_{m}} = \mu_{note\_p_{w}}$  
+$H_{1}: \mu_{note\_p_{m}} \neq \mu_{note\_p_{w}}$
 
-### b) Wie groß ist der p-Wert?
-Kann von gleicher Varianz der `note_p` in beiden Samples ausgegangen werden?
+Kann von gleicher Varianz der `note_p` in beiden Samples ausgegangen werden?  
+$H_{0}: Var(note\_p_{m}) = Var(note\_p_{w})$  
+$H_{1}: Var(note\_p_{m}) \neq Var(note\_p_{w})$
 ```{r}
 LeveneTest(note_p ~ geschl, data = daten2)
 ```
 Ja, da $Pr(>F) = 0.72 > \alpha$, mit $\alpha = 0.05$, wird $H_{0}$ nicht verworfen und es kann von einer gleichen Varianz der beiden Samples (m/w) ausgegangen werden.
+
+### b) Wie groß ist der p-Wert?
+
 
 t-Test für homogene Varianzen:  
 ```{r}
@@ -144,10 +166,10 @@ t.test(note_p ~ geschl, alternative = "two.sided", conf.level = 0.95, var.equal 
 Der p-Wert beträgt 0.1945.
 
 ### c) Muss die Nullhypothese bei einem Signifikanzniveau von 5% verworfen werden? Begründen Sie bitte ihre Antwort.
-Da der p-Wert 0.1945 größer als das Signifikanzniveau 0.05 liegt, kann die Nullhypothese nicht verworfen werden. 
+Da der p-Wert 0.1945 größer ist als das Signifikanzniveau von 0.05, kann die Nullhypothese nicht verworfen werden. 
 
 ### d) Interpretieren Sie das Ergebnis dieses Tests aus inhaltlicher Sicht.
-Man kann also davon ausgehen, dass sich die Erwartungswerte der `note_p` sich nicht signifikant unterscheiden je Geschlecht. Im Fach Physik sind Jungen und Mädchen also ungefähr gleich gut.
+Man kann davon ausgehen, dass sich die Erwartungswerte der `note_p` nicht signifikant unterscheiden je Geschlecht. Im Fach Physik sind Jungen und Mädchen also im Schnitt gleich gut.
 
 
 
