@@ -19,7 +19,24 @@ Einlesen des Datensatzes:
 load(file = "datensonstbet2.RData")
 head(daten2)
 ```
+## Aufgabe 1
+Die folgenden Berechnungen sollen nun für die ersten fünf Werte der Variable `note_p`, d.h der Werte für die ersten 5 Personen, per Hand vorgenommen werden. Beschreiben Sie dabei auch den Rechenweg. Berechnen Sie für diese Variable
 
+#### Den Mittelwert, die Varianz und die Standardabweichung
+$\overline{x} = {\frac {1}{n}}\sum _{i=1}^{n}x_{i}$, mit $n = 5$ und $X = {3,4,5,4,3}$
+$\overline{x} = \frac{(3+4+5+4+3)}{5} = \frac{19}{5} = 3.8 $
+
+$s^2 = {\frac {1}{n-1}}\sum_{i=1}^{n}(x_{i}-\overline{x})^2$, mit $n = 5, X = {3,4,5,4,3}$ und $\overline{x} = 3.8$
+$s^2 = \frac{(3-3.8)^2+(4-3.8)^2+(5-3.8)^2+(4-3.8)^2+(3-3.8)^2}{4}$ = $\frac{2.8}{4} = 0.7$
+$s = \sqrt{s^2} = \sqrt{0.7} = 0.8366$
+#### Die z-standartisierten Werte (für die ersten 5 Personen)
+$Z = \frac{\overline{Y} - \mu}{\frac{\sigma}{\sqrt{n}}}$, mit $\overline{Y} = \overline{x}$ und $\sigma = s$
+$z_i = \frac{y_i-\overline{y}}{s}$, mit $\overline{y} = 3.8$ und $s = 0.7$
+$z_1 = \frac{3 - 3.8}{0.8366} = -0.956, z_2 = \frac{4 - 3.8}{0.8366} = 0.239, z_3 = \frac{5 - 3.8}{0.8366} = 1.434, z_4 = \frac{4 - 3.8}{0.8366} = 0.239, z_5 = \frac{3 - 3.8}{0.8366} = -0.956$
+
+#### Erklären Sie bitte kurz den wesentlichen Unterschied zwischen den z-standardisierten Wert und dem ursprünglichen Wert (Note) für die erste Person.
+
+## Aufgabe 2
 
 ## Aufgabe 3 - Berechnen Sie bitte für die Variable `note_p`
 
