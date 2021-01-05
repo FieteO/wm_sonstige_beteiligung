@@ -137,7 +137,7 @@ cortest$conf.int
 
 ### h) Kann man anhand dieses Konfidenzintervalls entscheiden, ob die Nullhypothese bei einem Signifikanzniveaus von `α=.05` zu verwerfen ist? Begründen Sie bitte Ihre Meinung.
 
-Das Konfidenzintervall gibt den Bereich an, in dem, unter Annahme von $H_{0}$, in 95% der Stichproben die Messgröße (hier die Korrelation) enthalten ist. Entsprechend kann man einen Annahme- und Ablehnungsbereich für $H_{0}$ festlegen:  
+Das Konfidenzintervall gibt den Bereich an, in dem, unter Annahme von $H_{0}$, in 95% der Stichproben der Parameter $\theta$ (hier die Korrelation) enthalten ist. Entsprechend kann man einen Annahme- und Ablehnungsbereich für $H_{0}$ festlegen:  
 Annahmebereich: $-0.651 \leqslant \rho \leqslant 1.000$  
 Ablehnungsbereich: $\rho < -0.651, (\rho > 1)$, wobei $p > 1$ nicht möglich ist.
 
