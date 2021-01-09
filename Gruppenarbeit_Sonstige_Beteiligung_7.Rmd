@@ -38,7 +38,7 @@ $\begin{aligned}
 
 mit $n = 5, X = {3,4,5,4,3}$ und $\overline{x} = 3.8$  
 $\begin{aligned}
-s^2 &= {\frac {1}{n-1}}\sum_{i=1}^{n}(x_{i}-\overline{x})^2 \\
+s^2 &= \frac{{1}{n-1}}\sum_{i=1}^{n}(x_{i}-\overline{x})^2 \\
 s^2 &= \frac{(3-3.8)^2+(4-3.8)^2+(5-3.8)^2+(4-3.8)^2+(3-3.8)^2}{4} \\
 &= \frac{2.8}{4} \\
 &= 0.7 \\
@@ -52,12 +52,52 @@ $z_i = \frac{y_i-\overline{y}}{s}$, mit $\overline{y} = 3.8$ und $s = 0.8366$
 $z_1 = \frac{3 - 3.8}{0.8366} = -0.956, z_2 = \frac{4 - 3.8}{0.8366} = 0.239, z_3 = \frac{5 - 3.8}{0.8366} = 1.434, z_4 = \frac{4 - 3.8}{0.8366} = 0.239, z_5 = \frac{3 - 3.8}{0.8366} = -0.956$
 
 ## c) Erklären Sie bitte kurz den wesentlichen Unterschied zwischen den z-standardisierten Wert und dem ursprünglichen Wert (Note) für die erste Person.  
+Der z-standardisierte Wert wurde in die Standardnormalverteilung überführt. Mit der Transformation in die Standardnormalverteilung werden Aussagen über die Population einer Stichprobe ermöglicht. Der z-Wert drückt aus, wie viele Standardabweichungen der Wert von dem Mittelwert der Population entfernt liegt. Über den ersten Wert $z = -0.956$ lässt sich sagen, dass dieser knapp eine Standardabweichung unter dem Mittelwert der Population liegt und somit zu den unteren 17% der Population gehört ($\phi(-0.956) = 0.1695$).
 
 \newpage
 
 # Aufgabe 2  
 ## a) Kovarianz zwischen den Variablen `note_p` und `sk_p`  
+mit $X_{note\_p} = \{3,4,5,4,3\}, Y_{sk\_p} = \{30,21,12,31,42\}$ und $n = 5$
+
+$\overline{x} = 3.8$, siehe Aufgabe 1 a)
+
+$\begin{aligned}
+\overline{y} &= {\frac {1}{n}}\sum _{i=1}^{n}x_{i} \\
+\overline{y} &= \frac{(30+21+12+31+42)}{5} \\
+&= \frac{136}{5} \\
+&= 27.2
+\end{aligned}$  
+
+$\begin{aligned}
+s_{note\_p,sk\_p} &= {\frac {1}{n-1}}\sum_{i=1}^{n}(x_{i}-\overline{x})(y_{i}-\overline{y}) \\
+&= {\frac {1}{4}} ((3-3.8)(30-27.2)+(4-3.8)(21-27.2)+(5-3.8)(12-27.2) \\
+&  +(4-3.8)(31-27.2) +(3-3.8)(42-27.2)) \\
+&= {\frac {(-0.8)(-2.8)+(0.2)(-6.2)+(1.2)(-15.2)+(0.2)(3.8)+(-0.8)(14.8)}{4}} \\
+&= {\frac {2.24+-1.24+-18.24+0.76+-11.84}{4}} \\
+&= {\frac{28.32}{4}} \\
+&= -7.08
+\end{aligned}$
+
 ## b) Korrelation zwischen den Variablen `note_p` und `sk_p`  
+mit $s_{note\_p,sk\_p} = -7.08, s_{note\_p} = 0.8366$ und $\overline{y} = 27.2$
+
+$\begin{aligned}
+s_{sk\_p} &= \sqrt{ \frac{1}{n-1}\sum_{i=1}^{n}(y_{i}-\overline{y})^2 } \\
+&= \sqrt{\frac{(30-27.2)^2+(21-27.2)^2+(12-27.2)^2+(31-27.2)^2+(42-27.2)^2}{4}} \\
+&= \sqrt{\frac{2.8^2+-6.2^2+-15.2^2+0.76^2+-11.84^2}{4}} \\
+&= \sqrt{\frac{7.84+38.44+231.04+0.5776+140.1856}{4}} \\
+&= \sqrt{\frac{418.0832}{4}} \\
+&= \sqrt{104.5208} \\
+&= 10.22354
+\end{aligned}$
+
+$r_{note\_p,sk\_p} = \frac{s_{note\_p,sk\_p}}{s_{note\_p}s_{sk\_p}}$
+$\begin{aligned}
+r_{note\_p,sk\_p} &= \frac{s_{note\_p,sk\_p}}{s_{note\_p}s_{sk\_p}} \\
+&= \frac{-7.08}{0.8366*10.22354} \\
+&= -0.8277784
+\end{aligned}$
 
 # Aufgabe 3  
 Berechnen Sie bitte für die Variable `note_p`  
