@@ -38,7 +38,7 @@ $\begin{aligned}
 
 mit $n = 5, X = {3,4,5,4,3}$ und $\overline{x} = 3.8$  
 $\begin{aligned}
-s^2 &= \frac{{1}{n-1}}\sum_{i=1}^{n}(x_{i}-\overline{x})^2 \\
+s^2 &= \frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})^2 \\
 s^2 &= \frac{(3-3.8)^2+(4-3.8)^2+(5-3.8)^2+(4-3.8)^2+(3-3.8)^2}{4} \\
 &= \frac{2.8}{4} \\
 &= 0.7 \\
