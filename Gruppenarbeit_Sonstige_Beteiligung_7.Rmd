@@ -85,14 +85,14 @@ mit $s_{note\_p,sk\_p} = -7.08, s_{note\_p} = 0.8366$ und $\overline{y} = 27.2$
 $\begin{aligned}
 s_{sk\_p} &= \sqrt{ \frac{1}{n-1}\sum_{i=1}^{n}(y_{i}-\overline{y})^2 } \\
 &= \sqrt{\frac{(30-27.2)^2+(21-27.2)^2+(12-27.2)^2+(31-27.2)^2+(42-27.2)^2}{4}} \\
-&= \sqrt{\frac{2.8^2+-6.2^2+-15.2^2+0.76^2+-11.84^2}{4}} \\
+&= \sqrt{\frac{2.8^2+-6.2^2+-15.2^2+3.8^2+14.8^2}{4}} \\
 &= \sqrt{\frac{7.84+38.44+231.04+0.5776+140.1856}{4}} \\
 &= \sqrt{\frac{418.0832}{4}} \\
 &= \sqrt{104.5208} \\
 &= 10.22354
 \end{aligned}$
 
-$r_{note\_p,sk\_p} = \frac{s_{note\_p,sk\_p}}{s_{note\_p}s_{sk\_p}}$
+$r_{note\_p,sk\_p} = \frac{s_{note\_p,sk\_p}}{s_{note\_p}s_{sk\_p}}$  
 $\begin{aligned}
 r_{note\_p,sk\_p} &= \frac{s_{note\_p,sk\_p}}{s_{note\_p}s_{sk\_p}} \\
 &= \frac{-7.08}{0.8366*10.22354} \\
@@ -156,7 +156,7 @@ cor(daten2$note_p,daten2$sk_p)
 Es besteht eine moderate negative Korrelation zwischen den Variablen `note_p` und `sk_p`. Das heißt in der Regel korrelliert die eigene Einschätzung der Schüler zu ihren Leistungen auch mit der tatsächlichen Note im Fach Physik. Eine höhere Selbsteinschätzung führt zu einer numerisch niedrigeren Note.
 
 ## c) Stellen Sie zu der inhaltlichen Hypothese, dass eine positive Korrelation zwischen diesen beiden Variablen besteht, die statistische Null- und Alternativhypothese auf.  
-$h_{0}:\rho_{note\_p,sk\_p} = 0$  
+$h_{0}:\rho_{note\_p,sk\_p} \leqslant 0$  
 $h_{1}: \rho_{note\_p,sk\_p} > 0$
 
 ## d) Überprüfen Sie diese statistische Nullhypothese anhand eines Signifikanzniveaus von `α=.05`.  
